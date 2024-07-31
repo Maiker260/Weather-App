@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.flex {
+    display: flex;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+body {
+    background: #000 url(./Images/bg.045edac4468e3ab87a833664e263f543.jpg) no-repeat;
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}

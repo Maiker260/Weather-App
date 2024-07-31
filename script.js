@@ -31,8 +31,8 @@ async function getWeatherInfo(userLocation) {
 function displayWeather() {
 
     const testi = document.querySelector("#testi");
-    const userInput = document.querySelector("#user_input");
-    const sendBtn = document.querySelector("#send_btn");
+    const userInput = document.querySelector("#main_search_bar");
+    const sendBtn = document.querySelector("#search_btn");
 
     sendBtn.addEventListener('click', async () => {
         const weatherRequested = await getWeatherInfo(userInput.value);
