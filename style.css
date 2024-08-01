@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+/* General Styles */
+* {
+    box-sizing: border-box;
+}
+
 .flex {
     display: flex;
 }
@@ -9,10 +14,105 @@
 }
 
 body {
-    background: #000 url(./Images/bg.045edac4468e3ab87a833664e263f543.jpg) no-repeat;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.486) url(./Images/bg.045edac4468e3ab87a833664e263f543.jpg) no-repeat center;
+    background-blend-mode: overlay;
     background-size: cover;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-style: normal;
     color: white;
+    margin: 0;
+    padding: 0 4em;
+}
+
+/* Header */
+
+.header_section {
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2em;
+}
+
+.main_title_container {
+    align-items: center;
+    gap: 0.5em;
+}
+
+.main_title {
+    font-size: 2.2rem;
+}
+
+.header_icon {
+    height: 50%;
+    width: 2em;
+}
+
+.main_search_bar_container {
+    width: 50%;
+    border-radius: 30px;
+    background-color: #eee;
+    align-items: center;
+}
+
+.main_search_bar {
+    height: 2.5em;
+    width: 94%;
+    border: none;
+    border-radius: 30px;
+    padding-left: 2em;
+    font-size: 1.1rem;
+    background-color: #eee;
+}
+
+
+/* Middle Section */
+
+.main_section {
+    padding: 0 4em;
+}
+
+.middle_section {
+    justify-content: space-between;
+    padding-bottom: 1.5em;
+}
+
+.middle_section_left_side_gap {
+    padding-bottom: 1.5em;
+}
+
+.region_info {
+    margin: 0;
+}
+
+.region_info_main_title {
+    font-size: 2.5rem;
+}
+
+.region_info_country {
+    font-size: 1rem;
+}
+
+.daytime_info {
+    margin: 0;
+}
+
+.current_weather {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.current_weather_icon {
+    width: 80%;
+    height: 100%;
+}
+
+.weather_description {
+    margin: 0;
+}
+
+/* Lower Section */
+
+.main_bottom {
+    justify-content: space-between;
 }
