@@ -26,12 +26,21 @@ body {
     padding: 0 4em;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    max-height: 100vh;
+}
+
 /* Header */
 
 .header_section {
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 2em;
+    padding: 0 4em 2em 1.5em;
 }
 
 .main_title_container {
@@ -122,6 +131,11 @@ body {
     height: 100px;
 }
 
+.weather_info {
+    max-width: 13em;
+    max-height: 4em;
+}
+
     /* Right Side */
 
 .main_right_side_container {
@@ -141,7 +155,7 @@ body {
 }
 
 .weather_days {
-    width: 11.5em
+    width: 8.5em
 }
 
 .weather_days_title {
@@ -155,4 +169,51 @@ body {
 
 .weather_days_weather_min_max {
     margin: 0.2em;
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+
+    body {
+        padding: 0 1em;
+    }
+
+    .main_bottom {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .weather_days {
+        width: 11.5em
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    /* .header_section {
+
+    } */
+
+    .main_section {
+        padding: 0 2em;
+    }
+
+    .weather_days {
+        width: 8.5em
+    }
+
+}
+
+@media (max-width: 770px) {
+
+    .weather_days {
+        width: 8.5em
+    }
+
+    .header_section {
+        padding-right: 1em;
+    }
+
 }
