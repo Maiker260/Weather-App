@@ -330,6 +330,10 @@ body {
         padding: 0 0.5em 2em 0.5em;
     }
 
+    .main_title {
+        font-size: 2rem;
+    }
+
     .main_title_container {
         gap: 0;
     }
