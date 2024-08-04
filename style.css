@@ -280,7 +280,8 @@ body {
 @media (max-width: 500px) {
 
     .header_section {
-        padding-bottom: 1em;
+        padding-bottom: 3em;
+        grid-template-rows: 1fr 2em;
     }
 
     .settings_icon {
@@ -313,11 +314,28 @@ body {
     }
 
     .main_bottom {
-        padding-left: 15px;
+        padding: 0 5px;
     }
 
     .weather_days {
         width: 33%;
     }
+}
 
+@media (max-width: 400px) {
+
+    .header_section {
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template-rows: 1fr 2em;
+        padding: 0 1em 2em 1em;
+    }
+
+    .main_section {
+        padding: 0 0.5em;
+    }
+
+    .main_bottom {
+        padding: 0 5px;
+    }
+    
 }
