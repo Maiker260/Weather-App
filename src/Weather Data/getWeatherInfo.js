@@ -8,6 +8,8 @@ export default async function getWeatherInfo(userLocation) {
         
         const data = await response.json();
 
+        console.log(data);
+
         const { 
             days: weatherDays,
             description: weatherDescription,
@@ -15,7 +17,7 @@ export default async function getWeatherInfo(userLocation) {
             timezone: weatherTimezone,
             currentConditions: weatherCurrentConditions,
         } = data;
-        
+
         return {
             success: true,
             data: { 

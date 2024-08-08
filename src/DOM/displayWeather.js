@@ -2,6 +2,7 @@ import getWeatherInfo from "../Weather Data/getWeatherInfo";
 import DOMElements from "./DOMElements";
 import weatherInfoRequested from "../Weather Data/weatherInfoRequested";
 import getDOMElements from "./getDOMElements";
+import weatherDaysHanlder from "../Weather Data/weatherDaysHandler";
 
 export default function displayWeather() {
     const weatherDOMElements = DOMElements();
@@ -13,5 +14,6 @@ export default function displayWeather() {
         const weatherData = await getWeatherInfo(weatherInputs.mainSearchBar.value);
 
         weatherInfoRequested(weatherElements, weatherData.data);
+        weatherDaysHanlder(weatherData.data)
     });
 }

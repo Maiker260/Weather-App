@@ -1,9 +1,13 @@
+import updateDOMElementInfo from "../DOM/updateDOMElementInfo";
+
 export default function weatherInfoRequested(DOMelement, data) {
 
+    const [city, country] = data.weatherAddress.split(',').map(info => info.trim());
+
+    DOMelement.cityName.textContent = city;
+    DOMelement.countryName.textContent = country;
+
     const dataMapping = {
-        cityName: 'weatherAddress',
-        countryName: 'weatherAddress',
-        currentDay: 'weatherCurrentConditions.datetime',
         currentTime: 'weatherCurrentConditions.datetime',
         currentWeather: 'weatherCurrentConditions.temp',
         currentDescription: 'weatherDescription',
@@ -13,23 +17,5 @@ export default function weatherInfoRequested(DOMelement, data) {
         // chanceOfRain: 'chanceOfRain',
     };
 
-    for (const [elementKey, dataKey] of Object.entries(dataMapping)) {
-        const [mainKey, subKey] = dataKey.split('.');
-        if (subKey) {
-            DOMelement[elementKey].textContent = data[mainKey][subKey];
-        } else {
-            DOMelement[elementKey].textContent = data[mainKey];
-        }
-    }
+    updateDOMElementInfo(DOMelement, dataMapping, data);
 }
-
-function separateAddress(address) {
-
-    const result = data.split(',');
-
-    const data = {
-        city: result[0],
-        country: result[1].trim()
-    }
-    return { data }
-} 
