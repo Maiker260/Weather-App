@@ -5,4 +5,6 @@ import displayWeather from './DOM/displayWeather';
 import './style.css';
 
 // JS
-const weather = displayWeather();
+const temperatureScale = 'Celsius';
+// const temperatureScale = 'Fahrenheit';
+const weather = displayWeather(temperatureScale);

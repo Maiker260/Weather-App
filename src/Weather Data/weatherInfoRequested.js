@@ -1,6 +1,6 @@
 import updateDOMElementInfo from "../DOM/updateDOMElementInfo";
 
-export default function weatherInfoRequested(DOMelement, data) {
+export default function weatherInfoRequested(DOMelement, data, temperatureScale) {
 
     const [city, country] = data.weatherAddress.split(',').map(info => info.trim());
 
@@ -12,10 +12,10 @@ export default function weatherInfoRequested(DOMelement, data) {
         currentWeather: 'weatherCurrentConditions.temp',
         currentDescription: 'weatherDescription',
         feelsLike: 'weatherCurrentConditions.feelslike',
-        chanceOfRain: 'weatherCurrentConditions.humidity',
+        humidity: 'weatherCurrentConditions.humidity',
         windSpeed: 'weatherCurrentConditions.windspeed',
         // chanceOfRain: 'chanceOfRain',
     };
 
-    updateDOMElementInfo(DOMelement, dataMapping, data);
+    updateDOMElementInfo(DOMelement, dataMapping, data, temperatureScale);
 }
