@@ -8,8 +8,6 @@ export default async function getWeatherInfo(userLocation) {
         
         const data = await response.json();
 
-        console.log(data);
-
         const { 
             days: weatherDays,
             description: weatherDescription,

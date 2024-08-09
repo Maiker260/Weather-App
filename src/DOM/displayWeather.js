@@ -10,10 +10,20 @@ export default function displayWeather() {
     const weatherElements = getDOMElements(weatherDOMElements.weatherInfoElements);
     const weatherInputs = getDOMElements(weatherDOMElements.inputElements);
 
-    weatherInputs.searchBtn.addEventListener('click', async () => {
-        const weatherData = await getWeatherInfo(weatherInputs.mainSearchBar.value);
-
-        weatherInfoRequested(weatherElements, weatherData.data);
-        weatherDaysHanlder(weatherData.data)
+    weatherInputs.searchBtn.addEventListener('click', () => {
+        requestData(weatherInputs.mainSearchBar.value, weatherElements);
     });
+
+    weatherInputs.mainSearchBar.addEventListener('keydown', (event) => {
+        if (event.key === "Enter") {
+            requestData(weatherInputs.mainSearchBar.value, weatherElements);
+        }
+    })
+}
+
+async function requestData(inputValue, element) {
+    const weatherData = await getWeatherInfo(inputValue);
+
+    weatherInfoRequested(element, weatherData.data);
+    weatherDaysHanlder(weatherData.data)
 }

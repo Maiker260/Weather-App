@@ -1,6 +1,6 @@
-import getDOMElements from "../DOM/getDOMElements";
+import getDayDOMElement from "../DOM/getDayDOMElement";
 import DOMElements from "../DOM/DOMElements";
-import updateDOMElementInfo from "../DOM/updateDOMElementInfo";
+import updateDayDOMElementInfo from "../DOM/updateDayDOMElementInfo";
 
 export default function weatherDaysHanlder(data) {
 
@@ -20,23 +20,35 @@ export default function weatherDaysHanlder(data) {
         day6,
     ] = dayData;
 
-    const currentWeek = [ day0, day1, day2, day3, day4, day5, day6];
+    const days = [ 
+        day0, 
+        day1, 
+        day2, 
+        day3, 
+        day4, 
+        day5, 
+        day6
+    ];
 
-    // const displayDaydata = currentWeek.map(day => {
+    const DOMDaysList = getDayDOMElement(DOMElements().weatherDays);
+
+    days.forEach( (day, index) => {
+
+        const dayIndex = `day${index}`;
+        const DOMDay = DOMDaysList[dayIndex];
 
 
-    //     for (key of DOMDaysList) {
-            
-    //     }
+        if (DOMDay) {
+            DOMDay.min.textContent = day.tempmin;
+            DOMDay.max.textContent = day.tempmax;
+            // DOMDay.title.textContent = day.datetime;
+        }
 
-    // });
+        if (index == 0) {
+            DOMDaysList['currentDay'].textContent = day.datetime;
+        }
 
-    const daysList = DOMElements().weatherDays;
-    const DOMDaysList = getDOMElements(daysList);
-
-
-    // updateDOMElementInfo(DOMDaysList, data);
-    console.log(day0);
+    });
         
 
 }
