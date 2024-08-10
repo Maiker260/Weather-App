@@ -1,40 +1,45 @@
+import { weatherStoredData } from "..";
+
 export default async function getWeatherInfo(userLocation, newDataRequest) {
     try {
 
-        let data;
+        console.log("Old Data - getWeatherInfo:");
+        console.log(weatherStoredData);
+        console.log(`New Request: ${newDataRequest}`);
 
-        console.log(data);
-        console.log("Old Data");
+        if (!newDataRequest && weatherStoredData) {
+            console.log("Using stored data.");
+            return {
+                success: true,
+                data: weatherStoredData,
+            };
+        }
         
-        if (newDataRequest) {
-            const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=XDRLGMWDKUYLW6BM4HGMJM8RS`);
+        if (!weatherStoredData || newDataRequest) {
+            // const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=XDRLGMWDKUYLW6BM4HGMJM8RS`);
+            const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=EWDMM28Z85VSJSSNBJ4PRYFAG`);
             
             if (!response.ok) {
                 throw new Error(`HTTP Request Error: ${response.status}`);
             }
             
             console.log("YEP");
-            data = await response.json();
+            weatherStoredData = await response.json();
         }
-
-        console.log(data);
-        console.log("New Data");
         
         const { 
             days: weatherDays,
             description: weatherDescription,
             resolvedAddress: weatherAddress,
-            timezone: weatherTimezone,
             currentConditions: weatherCurrentConditions,
-        } = data;
+        } = weatherStoredData;
 
         return {
             success: true,
             data: { 
                 weatherDays, 
                 weatherDescription, 
-                weatherAddress, 
-                weatherTimezone, 
+                weatherAddress,
                 weatherCurrentConditions 
             },
         };

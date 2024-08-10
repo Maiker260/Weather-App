@@ -8,8 +8,8 @@ import './style.css';
 // JS
 let temperatureScale = 'Celsius';
 let newDataRequest = false;
-let data;
+export let weatherStoredData;
 
 const weather = displayWeather(temperatureScale, newDataRequest);
 
-const loadDOM = DOMLoad(temperatureScale, newDataRequest);
+const reloadDOM = DOMLoad(temperatureScale, newDataRequest);
