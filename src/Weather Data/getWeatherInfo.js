@@ -4,7 +4,6 @@ export default async function getWeatherInfo(userLocation, newDataRequest) {
     try {
 
         if (!newDataRequest && weatherStoredData) {
-            console.log("Using stored data.");
             return {
                 success: true,
                 data: weatherStoredData,

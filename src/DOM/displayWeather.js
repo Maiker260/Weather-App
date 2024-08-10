@@ -28,7 +28,6 @@ export default function displayWeather(temperatureScale, newDataRequest) {
         temperatureScale = 'Celsius';
         weatherInputs.celsius.classList.toggle("active_temp")
         weatherInputs.fahrenheitBtn.classList.toggle("active_temp")
-        console.log(`New Request - displayWeather before: ${newDataRequest}`);
         requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
     });
 

@@ -471,12 +471,7 @@ function getDOMElements(items) {
 async function getWeatherInfo(userLocation, newDataRequest) {
     try {
 
-        console.log("Old Data - getWeatherInfo:");
-        console.log(weatherStoredData);
-        console.log(`New Request: ${newDataRequest}`);
-
         if (!newDataRequest && weatherStoredData) {
-            console.log("Using stored data.");
             return {
                 success: true,
                 data: weatherStoredData,
@@ -490,8 +485,7 @@ async function getWeatherInfo(userLocation, newDataRequest) {
             if (!response.ok) {
                 throw new Error(`HTTP Request Error: ${response.status}`);
             }
-            
-            console.log("YEP");
+
             weatherStoredData = await response.json();
         }
         
@@ -654,11 +648,8 @@ function weatherInfoRequested(DOMelement, data, temperatureScale) {
 
 
 function requestData(inputValue, element, temperatureScale, newDataRequest) {
-
-    console.log(`New Request - Request Data Before: ${newDataRequest}`);
-
+    
     if (newDataRequest) {
-        console.log(`New Request - Request Data After: ${newDataRequest}`);
         startRequest(inputValue, element, temperatureScale, newDataRequest);
     } else {
         inputValue = 'San Jose, CR';
@@ -710,7 +701,6 @@ function displayWeather(temperatureScale, newDataRequest) {
         temperatureScale = 'Celsius';
         weatherInputs.celsius.classList.toggle("active_temp")
         weatherInputs.fahrenheitBtn.classList.toggle("active_temp")
-        console.log(`New Request - displayWeather before: ${newDataRequest}`);
         requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
     });
 
