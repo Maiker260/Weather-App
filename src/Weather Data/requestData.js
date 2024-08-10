@@ -4,11 +4,8 @@ import weatherInfoRequested from "./weatherInfoRequested";
 import { weatherStoredData } from "..";
 
 export default function requestData(inputValue, element, temperatureScale, newDataRequest) {
-
-    console.log(`New Request - Request Data Before: ${newDataRequest}`);
-
+    
     if (newDataRequest) {
-        console.log(`New Request - Request Data After: ${newDataRequest}`);
         startRequest(inputValue, element, temperatureScale, newDataRequest);
     } else {
         inputValue = 'San Jose, CR';

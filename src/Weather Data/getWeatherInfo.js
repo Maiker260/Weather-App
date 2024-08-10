@@ -3,10 +3,6 @@ import { weatherStoredData } from "..";
 export default async function getWeatherInfo(userLocation, newDataRequest) {
     try {
 
-        console.log("Old Data - getWeatherInfo:");
-        console.log(weatherStoredData);
-        console.log(`New Request: ${newDataRequest}`);
-
         if (!newDataRequest && weatherStoredData) {
             console.log("Using stored data.");
             return {
@@ -22,8 +18,7 @@ export default async function getWeatherInfo(userLocation, newDataRequest) {
             if (!response.ok) {
                 throw new Error(`HTTP Request Error: ${response.status}`);
             }
-            
-            console.log("YEP");
+
             weatherStoredData = await response.json();
         }
         
