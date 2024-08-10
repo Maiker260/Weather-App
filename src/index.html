@@ -15,35 +15,37 @@
             <h1 class="main_title">My Weather App</h1>
         </div>
         <div class="main_search_bar_container flex">
-            <input value="san jose, cr" id="main_search_bar" class="main_search_bar"  type="search" name="main_search_bar" placeholder="City, Country">
+            <input id="main_search_bar" class="main_search_bar"  type="search" name="main_search_bar" placeholder="City, Country">
             <svg id="main_search_btn" class="header_icon icon btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="#FFF" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
             </svg>
         </div>
-        <div class="settings_icon ">
-            <svg id="main_config_btn" class="header_icon icon btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z"/>
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-            </svg>
+        <div class="temp_container flex">
+            <div class="temperatureScale btn">
+                <p id="celsius_btn" class="temp_scale_title active_temp">°C</p>
+            </div>
+            <div class="temperatureScale btn">
+                <p id="fahrenheit_btn" class="temp_scale_title">°F</p>
+            </div>
         </div>
     </header>
     <main class="main_section">
         <section class="middle_section flex">
             <div class="left_side">
                 <div class="region_info_container middle_section_left_side_gap">
-                    <h2 id="city_name" class="region_info region_info_main_title ">City Name</h2>
-                    <h3 id="country_name" class="region_info region_info_country">Country Name</h3>
+                    <h2 id="city_name" class="region_info region_info_main_title ">San Jose</h2>
+                    <h3 id="country_name" class="region_info region_info_country">Costa Rica</h3>
                 </div>
                 <div class="daytime_info_container middle_section_left_side_gap">
-                    <p id="current_day" class="daytime_info">Current Day</p>
-                    <p id="current_time" class="daytime_info">Current Time</p>
+                    <p id="current_day" class="daytime_info">0000-00-00</p>
+                    <p id="current_time" class="daytime_info">00:00:00</p>
                 </div>
                 <div class="weather_info_container middle_section_left_side_gap">
-                    <p id="current_weather" class="current_weather weather_info">20 °C</p>
+                    <p id="current_weather" class="current_weather weather_info">00 °C</p>
                     <svg class="current_weather_icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76px" height="76px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> 
                         <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g>
                     </svg>
-                    <p id="weather_description" class="weather_description weather_info">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p id="weather_description" class="weather_description weather_info">Similar temperatures continuing with a chance of rain multiple days.</p>
                 </div>
             </div>
             <div class="right_side">
@@ -53,7 +55,7 @@
                     </svg>
                     <div class="main_right_side_info_container">
                         <p class="main_right_side_info main_right_side_info_title">Feels Like</p>
-                        <p id="feels_like" class="main_right_side_info main_right_side_info_value">13 °C</p>
+                        <p id="feels_like" class="main_right_side_info main_right_side_info_value">00 °C</p>
                     </div>
                 </div>
                 <div class="main_right_side_container flex">
@@ -62,7 +64,7 @@
                     </svg>
                     <div class="main_right_side_info_container">
                         <p class="main_right_side_info main_right_side_info_title">Humidity</p>
-                        <p id="humidity" class="main_right_side_info main_right_side_info_value">73%</p>
+                        <p id="humidity" class="main_right_side_info main_right_side_info_value">00%</p>
                     </div>
                 </div>
                 <div class="main_right_side_container flex">
@@ -71,7 +73,7 @@
                     </svg>
                     <div class="main_right_side_info_container">
                         <p class="main_right_side_info main_right_side_info_title">Chance of Rain</p>
-                        <p id="chance_of_rain" class="main_right_side_info main_right_side_info_value">54%</p>
+                        <p id="chance_of_rain" class="main_right_side_info main_right_side_info_value">00%</p>
                     </div>
                 </div>
                 <div class="main_right_side_container flex">
@@ -80,7 +82,7 @@
                     </svg>
                     <div class="main_right_side_info_container">
                         <p class="main_right_side_info main_right_side_info_title">Wind Speed</p>
-                        <p id="wind_speed" class="main_right_side_info main_right_side_info_value">25.7 kmh/</p>
+                        <p id="wind_speed" class="main_right_side_info main_right_side_info_value">00.0 km/h</p>
                     </div>
                 </div>
             </div>
@@ -90,56 +92,56 @@
         <div class="weather_days">
             <h3 id=day0 class="weather_days_title">Sunday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day0_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day0_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day0_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day0_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
         <div class="weather_days">
             <h3 id="day1" class="weather_days_title">Monday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day1_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day1_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day1_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day1_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
         <div class="weather_days">
             <h3 id="day2" class="weather_days_title">Tuesday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day2_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day2_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day2_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day2_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
         <div class="weather_days">
             <h3 id="day3" class="weather_days_title">Wednesday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day3_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day3_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day3_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day3_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
         <div class="weather_days">
             <h3 id="day4" class="weather_days_title">Thursday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day4_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day4_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day4_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day4_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
         <div class="weather_days">
             <h3 id="day5" class="weather_days_title">Friday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day5_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day5_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day5_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day5_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
         <div class="weather_days">
             <h3 id="day6" class="weather_days_title">Saturday</h3>
             <div class="weather_days_weather weather_days_weather_min_max_container">
-                <p id="day6_min" class="weather_days_weather weather_days_weather_min_max">Min: 20 °C</p>
-                <p id="day6_max" class="weather_days_weather weather_days_weather_min_max">Max: 20 °C</p>
+                <p id="day6_min" class="weather_days_weather weather_days_weather_min_max">Min: 00 °C</p>
+                <p id="day6_max" class="weather_days_weather weather_days_weather_min_max">Max: 00 °C</p>
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85px" height="85px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Base" display="none"> </g> <g> <g> <path d="M69.24,40.488C72.173,37.886,74,34.094,74,30c0-1.104-0.896-2-2-2c-5.514,0-10-4.486-10-10c0-1.104-0.896-2-2-2 c-7.078,0-12.931,5.284-13.857,12.111c-6.848,0.737-12.533,5.488-14.454,12.072C31.112,40.079,30.507,40,30,40 c-6.065,0-11,4.935-11,11s4.935,11,11,11h36c6.065,0,11-4.935,11-11C77,46.062,73.728,41.875,69.24,40.488z M58.168,20.168 c0.934,5.985,5.675,10.728,11.66,11.664c-0.615,3.246-2.84,6.006-5.862,7.326c-2.154-5.948-7.447-10.206-13.792-11.008 C50.933,24.111,54.126,20.92,58.168,20.168z M66,58H30c-3.859,0-7-3.141-7-7s3.141-7,7-7c0.277,0,0.724,0.068,1.194,0.162V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-3.224C36.269,36.525,41.631,32,48,32c6.372,0,11.736,4.53,12.808,10.787V46 c0,1.104,0.896,2,2,2s2-0.896,2-2v-1.837C65.278,44.069,65.726,44,66,44c3.859,0,7,3.141,7,7S69.859,58,66,58z"></path> </g> </g> </g></svg>
         </div>
