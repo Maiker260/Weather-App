@@ -1,6 +1,7 @@
 import DOMElements from "./DOMElements";
 import getDOMElements from "./getDOMElements";
 import requestData from "../Weather Data/requestData";
+import addTempActiveClass from "./addTempActiveClass";
 
 export default function displayWeather(temperatureScale, newDataRequest) {
 
@@ -8,6 +9,8 @@ export default function displayWeather(temperatureScale, newDataRequest) {
 
     const weatherElements = getDOMElements(weatherDOMElements.weatherInfoElements);
     const weatherInputs = getDOMElements(weatherDOMElements.inputElements);
+    const celsiusToggle = weatherInputs.celsiusBtn;
+    const fahrenheitToggle = weatherInputs.fahrenheitBtn;
     const userInput = weatherInputs.mainSearchBar;
 
     weatherInputs.searchBtn.addEventListener('click', () => {
@@ -24,17 +27,19 @@ export default function displayWeather(temperatureScale, newDataRequest) {
         }
     })
 
-    weatherInputs.celsius.addEventListener('click', () => {
+    celsiusToggle.addEventListener('click', () => {
         temperatureScale = 'Celsius';
-        weatherInputs.celsius.classList.toggle("active_temp")
-        weatherInputs.fahrenheitBtn.classList.toggle("active_temp")
-        requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        if (!celsiusToggle.classList.contains("active_temp")) {
+            addTempActiveClass(celsiusToggle, fahrenheitToggle);
+            requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        }
     });
 
-    weatherInputs.fahrenheitBtn.addEventListener('click', () => {
+    fahrenheitToggle.addEventListener('click', () => {
         temperatureScale = 'Fahrenheit';
-        weatherInputs.celsius.classList.toggle("active_temp")
-        weatherInputs.fahrenheitBtn.classList.toggle("active_temp")
-        requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        if (!fahrenheitToggle.classList.contains("active_temp")) {
+            addTempActiveClass(fahrenheitToggle, celsiusToggle);
+            requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        }
     });
 }

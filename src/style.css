@@ -15,7 +15,7 @@
 
 body {
     min-height: 100vh;
-    background: rgba(0, 0, 0, 0.486) url(../Images/bg.045edac4468e3ab87a833664e263f543.jpg) no-repeat center;
+    background: rgba(0, 0, 0, 0.486) url(../Images/Forest_landscape_generated.webp) no-repeat center;
     background-blend-mode: overlay;
     background-size: cover;
     font-family: "Roboto", sans-serif;
@@ -248,7 +248,6 @@ body {
 }
 
 @media (max-width: 820px) {
-
     .header_section {
         padding-right: 2em;
     }
@@ -268,16 +267,18 @@ body {
 @media (max-width: 700px) {
     .header_section {
         display: grid; 
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 1fr 1fr; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 4em 3em 4em; 
         gap: 0px 0px; 
         grid-template-areas: 
-          "main_title_container main_title_container temp_container"
-          "main_search_bar_container main_search_bar_container main_search_bar_container"; 
-    }
+            "main_title_container"
+            "main_search_bar_container"
+            "temp_container"; 
+      }
 
     .main_title_container {
-        grid-area: main_title_container; 
+        grid-area: main_title_container;
+        justify-self: center;
     }
 
     .main_search_bar_container {
@@ -296,10 +297,6 @@ body {
         padding: 0;
     }
 
-    .header_section {
-        grid-template-columns: 1fr 6fr 1fr; 
-    }
-
     .temp_container {
         padding-right: 0.5em;
     }
@@ -312,11 +309,6 @@ body {
 
 /* Mobile Media Queries */
 @media (max-width: 500px) {
-
-    .header_section {
-        padding-bottom: 3em;
-        grid-template-rows: 1fr 2em;
-    }
 
     .temp_container {
         padding-right: 0;
@@ -359,13 +351,7 @@ body {
 @media (max-width: 400px) {
 
     .header_section {
-        grid-template-columns: 1fr 8fr 1fr;
-        grid-template-rows: 1fr 2em;
-        padding: 0 0.5em 2em 0.5em;
-    }
-
-    .main_title {
-        font-size: 2rem;
+        padding: 0 0.5em 1em;
     }
 
     .main_title_container {

@@ -54,7 +54,7 @@ export default function DOMElements() {
         mainSearchBar: "main_search_bar",
         searchBtn: "main_search_btn",
         fahrenheitBtn: "fahrenheit_btn",
-        celsius: "celsius_btn",
+        celsiusBtn: "celsius_btn",
     };
 
     return { weatherInfoElements, weatherDays, inputElements }

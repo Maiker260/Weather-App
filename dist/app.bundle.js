@@ -386,7 +386,7 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ 553:
+/***/ 786:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -452,7 +452,7 @@ function DOMElements() {
         mainSearchBar: "main_search_bar",
         searchBtn: "main_search_btn",
         fahrenheitBtn: "fahrenheit_btn",
-        celsius: "celsius_btn",
+        celsiusBtn: "celsius_btn",
     };
 
     return { weatherInfoElements, weatherDays, inputElements }
@@ -670,7 +670,13 @@ async function startRequest(inputValue, element, temperatureScale, newDataReques
         console.error(weatherData.error);
     }
 }
+;// CONCATENATED MODULE: ./src/DOM/addTempActiveClass.js
+function addTempActiveClass(currentBtn, otherBtn) {
+    currentBtn.classList.toggle("active_temp")
+    otherBtn.classList.toggle("active_temp")
+}
 ;// CONCATENATED MODULE: ./src/DOM/displayWeather.js
+
 
 
 
@@ -681,6 +687,8 @@ function displayWeather(temperatureScale, newDataRequest) {
 
     const weatherElements = getDOMElements(weatherDOMElements.weatherInfoElements);
     const weatherInputs = getDOMElements(weatherDOMElements.inputElements);
+    const celsiusToggle = weatherInputs.celsiusBtn;
+    const fahrenheitToggle = weatherInputs.fahrenheitBtn;
     const userInput = weatherInputs.mainSearchBar;
 
     weatherInputs.searchBtn.addEventListener('click', () => {
@@ -697,18 +705,20 @@ function displayWeather(temperatureScale, newDataRequest) {
         }
     })
 
-    weatherInputs.celsius.addEventListener('click', () => {
+    celsiusToggle.addEventListener('click', () => {
         temperatureScale = 'Celsius';
-        weatherInputs.celsius.classList.toggle("active_temp")
-        weatherInputs.fahrenheitBtn.classList.toggle("active_temp")
-        requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        if (!celsiusToggle.classList.contains("active_temp")) {
+            addTempActiveClass(celsiusToggle, fahrenheitToggle);
+            requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        }
     });
 
-    weatherInputs.fahrenheitBtn.addEventListener('click', () => {
+    fahrenheitToggle.addEventListener('click', () => {
         temperatureScale = 'Fahrenheit';
-        weatherInputs.celsius.classList.toggle("active_temp")
-        weatherInputs.fahrenheitBtn.classList.toggle("active_temp")
-        requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        if (!fahrenheitToggle.classList.contains("active_temp")) {
+            addTempActiveClass(fahrenheitToggle, celsiusToggle);
+            requestData(userInput.value, weatherElements, temperatureScale, newDataRequest);
+        }
     });
 }
 ;// CONCATENATED MODULE: ./src/DOM/DOMLoad.js
@@ -795,7 +805,7 @@ const reloadDOM = DOMLoad(temperatureScale, newDataRequest);
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__(553));
+/******/ var __webpack_exports__ = (__webpack_exec__(786));
 /******/ }
 ]);
 //# sourceMappingURL=app.bundle.js.map
