@@ -154,9 +154,13 @@ body {
     margin: 0;
 }
 
+.current_weather_icon_container {
+    padding-right: 4em;
+}
+
 .current_weather_icon {
-    width: 80%;
-    height: 120px;
+    height: 65px;
+    width: 100%;
 }
 
 .weather_description {
@@ -166,6 +170,12 @@ body {
 .main_right_side_icon {
     width: 100px;
     height: 100px;
+}
+
+.weather_info_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .weather_info {
@@ -206,6 +216,15 @@ body {
 
 .weather_days_weather_min_max {
     margin: 0.2em;
+}
+
+.day_icon_container {
+    padding-top: 1em;
+}
+
+.weather_day_icon {
+    height: 45px;
+    width: 100%;
 }
 
 /* Media Queries */
@@ -322,6 +341,10 @@ body {
         padding-bottom: 0.5em;
     }
 
+    .current_weather_icon_container {
+        padding-right: 0;
+    }
+
     .right_side {
         display: flex;
         flex-wrap: wrap;
@@ -363,7 +386,7 @@ body {
     }
 
     .main_bottom {
-        padding: 0 5px;
+        padding: 0 5px 20px 0;
     }
     
 }

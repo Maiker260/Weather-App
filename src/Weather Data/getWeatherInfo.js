@@ -11,8 +11,8 @@ export default async function getWeatherInfo(userLocation, newDataRequest) {
         }
         
         if (!weatherStoredData || newDataRequest) {
-            // const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=XDRLGMWDKUYLW6BM4HGMJM8RS`);
-            const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=EWDMM28Z85VSJSSNBJ4PRYFAG`);
+            const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=XDRLGMWDKUYLW6BM4HGMJM8RS`);
+            // const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation}?key=EWDMM28Z85VSJSSNBJ4PRYFAG`);
             
             if (!response.ok) {
                 throw new Error(`HTTP Request Error: ${response.status}`);

@@ -21,7 +21,7 @@ async function startRequest(inputValue, element, temperatureScale, newDataReques
         weatherStoredData = weatherData.data;
 
         weatherInfoRequested(element, weatherStoredData, temperatureScale);
-        weatherDaysHandler(weatherStoredData, temperatureScale);
+        weatherDaysHandler(weatherStoredData, temperatureScale, newDataRequest);
     } else {
         console.error(weatherData.error);
     }
