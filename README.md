@@ -55,6 +55,7 @@ https://maiker260.github.io/Weather-App/
 
 Home Page
 ![Home Page](./screenshots/Home.png)
+
 ## Acknowledgements
 
 - [Visual Crossing - Weather API](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)
